@@ -10,6 +10,5 @@ class Twitter
     public:
         Twitter(std::string path);
         void printMap();
-    private:
-        std::map<int,std::vector<int>> connections;
+        std::map<int,std::vector<int> > connections;
 };
