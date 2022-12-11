@@ -11,4 +11,5 @@ class Twitter
         Twitter(std::string path);
         void printMap();
         std::map<int,std::vector<int> > connections;
+        std::map<int, int> weights;
 };

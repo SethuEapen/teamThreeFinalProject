@@ -1,7 +1,0 @@
-[
-{
-  "directory": "/Users/aghalya/Code/cs225/final project/teamThreeFinalProject/build",
-  "command": "/usr/bin/clang++   -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -o CMakeFiles/finalproject.dir/main.cpp.o -c \"/Users/aghalya/Code/cs225/final project/teamThreeFinalProject/main.cpp\"",
-  "file": "/Users/aghalya/Code/cs225/final project/teamThreeFinalProject/main.cpp"
-}
-]
