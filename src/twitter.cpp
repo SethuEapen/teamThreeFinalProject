@@ -2,13 +2,17 @@
 #include <fstream>
 
 Twitter::Twitter(std::string path, int myID) {
+    ID = myID;
     //Read in the file
     std::ifstream infile(path);
     int start, end;
     int maxWeight = 0;
+
     while (infile >> start >> end) {
-        //std::cout << start << " follows " << end << std::endl;
         connections[start].push_back(end);
+        if (connections.find(end) == connections.end()) {
+            connections[end].resize(0);
+        }
         if (weights.find(end) != weights.end()) {
             weights[end]++;
         } else {
@@ -31,7 +35,12 @@ Twitter::Twitter(std::string path, int myID) {
 
     
     //get rid of extranious data
-    std::cout << "here" << std::endl;
+    if (connections.find(myID) == connections.end()) {
+        std::cout << "ENTERED ID NOT VALID" << std::endl;
+        exit(0);
+    }
+
+
     std::set<int> keep = BFS(myID);
 
     std::map<int,std::vector<int> > connectionsUpdated;
@@ -46,7 +55,10 @@ Twitter::Twitter(std::string path, int myID) {
             }
         }
     }
+    //std::cout << connections.size() << std::endl;
     connections = connectionsUpdated;
+    //std::cout << connections.size() << std::endl;
+    dijkstra(myID);
 }
 
 void Twitter::printMap() {
@@ -78,12 +90,12 @@ std::string Twitter::printMapDebug() {
 
 std::set<int> Twitter::BFS(int myID) {
     int temp = myID;
-    std::map<int, bool> visited;
+    std::map<int, int> visited;
     for(auto i : connections) {
         if (i.first == myID) {
-            visited.insert(std::pair<int, bool>(i.first, true));
+            visited.insert(std::pair<int, int>(i.first, 0));
         } else {
-            visited.insert(std::pair<int, bool>(i.first, false));
+            visited.insert(std::pair<int, int>(i.first, -1));
         }
     }
     std::set<int> nodes;
@@ -94,21 +106,14 @@ std::set<int> Twitter::BFS(int myID) {
         temp = queue.front();
         nodes.insert(temp);
         queue.pop_front();
-        for(auto i : connections[temp]) {
-            if (visited.at(i) == false) {
-                visited.at(i) = true;
-                queue.push_back(i);
+        if (visited[temp] < 2) {
+            for(auto i : connections[temp]) {
+                if (visited.at(i) == -1) {
+                    visited.at(i) = visited[temp] + 1;
+                    queue.push_back(i);
+                }
             }
         }
-
-    }
-    for (auto i: visited) {
-        std::cout << i.first << std::endl;
-    }
-    std::cout << "\n";
-    for(auto i: nodes) {
-        std::cout << i << std::endl;
-
     }
     return nodes;
 } 
@@ -123,14 +128,22 @@ std::string Twitter::printWeights() {
     return output;
 }
 
-std::map<int, int> Twitter::dijkstra(int start, int end) {
-    std::map<int, int> dist; //distances from start
-    //std::map<int, std::vector<int>> paths;
-    std::map<int, int> prev; //has it been seen
+std::stack<int> Twitter::dijkstraHelper(int end) {
+    std::stack<int> path;
+    int curr = end;
+    if (prev.find(curr) != prev.end() || curr == ID) {
+        while (curr != -1) {
+            path.push(curr);
+            curr = prev[curr];
+        }
+    }
+    return path;
+}
+
+void Twitter::dijkstra(int start) {
     std::set<int> seen;
     for (auto i : connections) { //for each node
         dist[i.first] = INT_MAX; //distances are all intmax
-        //paths[i.first].push_back(start);
         prev[i.first] = -1; //we have not seen any
         seen.insert(i.first);
     }
@@ -138,25 +151,21 @@ std::map<int, int> Twitter::dijkstra(int start, int end) {
         dist[start] = 0;
     } else {
         std::cout << "START DOES NOT EXIST" << std::endl;
-        std::map<int, int> toReturn;
-        return toReturn;
+        return;
     }
     while (!seen.empty()) { //repeat as many times as there are nodes
         int min = minDist(dist, seen);//find minimum distance of non seen things in the minimuum array
         seen.erase(min);
-        //std::cout << min << std::endl;
-        prev[min] = true;
+        //prev[min] = true;
         for (int j : connections[min]) { //for each connection of the minimum
             if (seen.find(j) != seen.end()) {
                 if(dist[min] + weights[j] < dist[j]) {
                     dist[j] = dist[min] + weights[j];
-                    //paths[j].push_back(min);
                     prev[j] = min;
                 }
             }
         }
     }
-    return dist;
 }
 
 int Twitter::minDist(std::map<int, int> distance, std::set<int> seen) {
