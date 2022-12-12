@@ -22,10 +22,10 @@ Twitter::Twitter(std::string path) {
             weights[i.first] = 0;
         }
     }
-    for (auto const i : weights) {
+    for (auto const &i : weights) {
         weights[i.first] = maxWeight - i.second + 1;
     }
-    for (auto i : weights) {
+    for (auto &i : weights) {
         std::cout << " | " << i.first << ", " << i.second;
     }
     std::cout << std::endl;
