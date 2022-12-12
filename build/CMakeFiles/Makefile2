@@ -141,8 +141,8 @@ CMakeFiles/finalproject.dir/clean:
 # Target rules for target CMakeFiles/test.dir
 
 # All Build rule for target.
-CMakeFiles/test.dir/all: src/CMakeFiles/src.dir/all
 CMakeFiles/test.dir/all: entry/CMakeFiles/entry.dir/all
+CMakeFiles/test.dir/all: src/CMakeFiles/src.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/build/CMakeFiles --progress-num=8,9 "Built target test"
