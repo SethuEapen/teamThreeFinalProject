@@ -10,7 +10,7 @@ The data folder has sample datasets that we created to test our code. We made th
 
 The src folder has all of our code files, including the main file. Twitter.cpp is the only file we needed to create for this project. We wrote all of our traversals/algorithms into it (BFS, Tarjan's, Dijkstra's), as well as the constructor and helper functions that we needed to implement the algorithms and run/test our code.  
 
-The tests folder has our test files
+The tests folder has our test files that we created to run our code.
 
 ***
 **Running Instructions**
@@ -21,4 +21,7 @@ The tests folder has our test files
     -- `cd build`  
     -- `cmake ..`
 4) to run the test files, run:  
+    -- `./test`
+5) every time you need to recompile and test the code, you will need to run:  
+    -- `make`  
     -- `./test`
