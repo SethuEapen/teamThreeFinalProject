@@ -17,7 +17,7 @@ Twitter::Twitter(std::string path) {
             maxWeight = weights[end];
         }
     }
-    for (auto const i : connections) {
+    for (auto const &i : connections) {
         if (weights.find(i.first) == weights.end()) {
             weights[i.first] = 0;
         }
@@ -50,7 +50,7 @@ std::string Twitter::printMapDebug() {
         output += ", {";
         for(int i : val) {
             output += std::to_string(i);
-            output += ", ";
+            output += ",";
         } 
         output += "}, ";
     }

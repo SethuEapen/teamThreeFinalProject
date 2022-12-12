@@ -9,7 +9,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/src/bfs.cpp" "src/CMakeFiles/src.dir/bfs.cpp.o" "gcc" "src/CMakeFiles/src.dir/bfs.cpp.o.d"
-  "/Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/src/main.cpp" "src/CMakeFiles/src.dir/main.cpp.o" "gcc" "src/CMakeFiles/src.dir/main.cpp.o.d"
   "/Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/src/twitter.cpp" "src/CMakeFiles/src.dir/twitter.cpp.o" "gcc" "src/CMakeFiles/src.dir/twitter.cpp.o.d"
   )
 

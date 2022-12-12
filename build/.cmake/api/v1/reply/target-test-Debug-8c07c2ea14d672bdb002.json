@@ -30,13 +30,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 79,
+				"line" : 87,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 81,
+				"line" : 91,
 				"parent" : 0
 			},
 			{
@@ -73,7 +73,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk"
+					"fragment" : " -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk"
 				},
 				{
 					"fragment" : "-std=gnu++17"
@@ -81,6 +81,10 @@
 			],
 			"includes" : 
 			[
+				{
+					"backtrace" : 2,
+					"path" : "/Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/entry"
+				},
 				{
 					"backtrace" : 2,
 					"path" : "/Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/src"
@@ -130,6 +134,10 @@
 		{
 			"backtrace" : 2,
 			"id" : "src::@145eef247bfb46b6828c"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "entry::@23c8adb4251a93eaba28"
 		}
 	],
 	"id" : "test::@6890427a1f51a3e7e1df",
@@ -138,7 +146,7 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "-g",
+				"fragment" : "-pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4",
 				"role" : "flags"
 			},
 			{
@@ -148,6 +156,11 @@
 			{
 				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libCatch2Main.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "entry/libentry.a",
 				"role" : "libraries"
 			},
 			{

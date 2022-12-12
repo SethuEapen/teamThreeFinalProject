@@ -1,3 +1,5 @@
-add_test( [==[adj list to connections test 1]==] /Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/build/test [==[adj list to connections test 1]==]  )
-set_tests_properties( [==[adj list to connections test 1]==] PROPERTIES WORKING_DIRECTORY /Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/build)
-set( test_TESTS [==[adj list to connections test 1]==])
+add_test( [==[testing population of adjacency list]==] /Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/build/test [==[testing population of adjacency list]==]  )
+set_tests_properties( [==[testing population of adjacency list]==] PROPERTIES WORKING_DIRECTORY /Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/build)
+add_test( [==[testing weighting]==] /Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/build/test [==[testing weighting]==]  )
+set_tests_properties( [==[testing weighting]==] PROPERTIES WORKING_DIRECTORY /Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/build)
+set( test_TESTS [==[testing population of adjacency list]==] [==[testing weighting]==])

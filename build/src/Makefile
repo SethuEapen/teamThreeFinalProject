@@ -175,30 +175,6 @@ bfs.cpp.s:
 	cd /Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/bfs.cpp.s
 .PHONY : bfs.cpp.s
 
-main.o: main.cpp.o
-.PHONY : main.o
-
-# target to build an object file
-main.cpp.o:
-	cd /Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/main.cpp.o
-.PHONY : main.cpp.o
-
-main.i: main.cpp.i
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	cd /Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	cd /Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/main.cpp.s
-.PHONY : main.cpp.s
-
 twitter.o: twitter.cpp.o
 .PHONY : twitter.o
 
@@ -237,9 +213,6 @@ help:
 	@echo "... bfs.o"
 	@echo "... bfs.i"
 	@echo "... bfs.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
 	@echo "... twitter.o"
 	@echo "... twitter.i"
 	@echo "... twitter.s"

@@ -1,27 +1,27 @@
 [
 {
   "directory": "/Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/build",
-  "command": "/usr/bin/clang++   -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu++17 -o CMakeFiles/finalproject.dir/main.cpp.o -c /Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/main.cpp",
+  "command": "/usr/bin/clang++    -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu++17 -o CMakeFiles/finalproject.dir/main.cpp.o -c /Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/main.cpp",
   "file": "/Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/main.cpp"
 },
 {
   "directory": "/Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/build",
-  "command": "/usr/bin/clang++  -I/Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/src -isystem /usr/local/include -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu++17 -o CMakeFiles/test.dir/tests/tests.cpp.o -c /Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/tests/tests.cpp",
+  "command": "/usr/bin/clang++  -I/Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/entry -I/Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/src -isystem /usr/local/include  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu++17 -o CMakeFiles/test.dir/tests/tests.cpp.o -c /Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/tests/tests.cpp",
   "file": "/Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/tests/tests.cpp"
 },
 {
   "directory": "/Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/build/src",
-  "command": "/usr/bin/clang++  -I/Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/src -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu++17 -o CMakeFiles/src.dir/bfs.cpp.o -c /Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/src/bfs.cpp",
+  "command": "/usr/bin/clang++  -I/Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/src  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu++17 -o CMakeFiles/src.dir/bfs.cpp.o -c /Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/src/bfs.cpp",
   "file": "/Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/src/bfs.cpp"
 },
 {
   "directory": "/Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/build/src",
-  "command": "/usr/bin/clang++  -I/Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/src -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu++17 -o CMakeFiles/src.dir/main.cpp.o -c /Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/src/main.cpp",
-  "file": "/Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/src/main.cpp"
+  "command": "/usr/bin/clang++  -I/Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/src  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu++17 -o CMakeFiles/src.dir/twitter.cpp.o -c /Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/src/twitter.cpp",
+  "file": "/Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/src/twitter.cpp"
 },
 {
-  "directory": "/Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/build/src",
-  "command": "/usr/bin/clang++  -I/Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/src -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu++17 -o CMakeFiles/src.dir/twitter.cpp.o -c /Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/src/twitter.cpp",
-  "file": "/Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/src/twitter.cpp"
+  "directory": "/Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/build/entry",
+  "command": "/usr/bin/clang++  -I/Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/entry  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu++17 -o CMakeFiles/entry.dir/main.cpp.o -c /Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/entry/main.cpp",
+  "file": "/Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/entry/main.cpp"
 }
 ]

@@ -9,3 +9,8 @@
 /Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/build/src/CMakeFiles/package_source.dir
 /Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/build/src/CMakeFiles/edit_cache.dir
 /Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/build/src/CMakeFiles/rebuild_cache.dir
+/Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/build/entry/CMakeFiles/entry.dir
+/Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/build/entry/CMakeFiles/package.dir
+/Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/build/entry/CMakeFiles/package_source.dir
+/Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/build/entry/CMakeFiles/edit_cache.dir
+/Users/aghalya/Code/cs225/final-project/teamThreeFinalProject/build/entry/CMakeFiles/rebuild_cache.dir

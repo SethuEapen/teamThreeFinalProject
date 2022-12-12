@@ -1,7 +1,7 @@
 #include <iostream>
-#include "twitter.h"
+#include "../src/twitter.h"
 #include <string>
-#include "bfs.hpp"
+#include "../src/bfs.hpp"
 
 using namespace std;
 

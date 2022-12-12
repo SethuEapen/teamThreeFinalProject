@@ -176,6 +176,19 @@ src/fast:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/build
 .PHONY : src/fast
 
+#=============================================================================
+# Target rules for targets named entry
+
+# Build rule for target.
+entry: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 entry
+.PHONY : entry
+
+# fast build rule for target.
+entry/fast:
+	$(MAKE) $(MAKESILENT) -f entry/CMakeFiles/entry.dir/build.make entry/CMakeFiles/entry.dir/build
+.PHONY : entry/fast
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -234,6 +247,7 @@ help:
 	@echo "... package"
 	@echo "... package_source"
 	@echo "... rebuild_cache"
+	@echo "... entry"
 	@echo "... finalproject"
 	@echo "... src"
 	@echo "... test"
