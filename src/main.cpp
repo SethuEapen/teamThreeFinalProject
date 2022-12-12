@@ -9,8 +9,10 @@ int main() {
     std::string path = "../data/test_set_1.txt";
     int myID;
     std::cout << "Please enter your Twitter ID: ";
+    
     std::cin >> myID;
     Twitter twitter(path, myID);
+    
     //twitter.printMap();
     std::cout << twitter.printMapDebug() << std::endl;
     std::string command;

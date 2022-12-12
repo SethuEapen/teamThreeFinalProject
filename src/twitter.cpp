@@ -28,8 +28,10 @@ Twitter::Twitter(std::string path, int myID) {
     for (auto const i : weights) {
         weights[i.first] = maxWeight - i.second + 1;
     }
+
     
     //get rid of extranious data
+    std::cout << "here" << std::endl;
     std::set<int> keep = BFS(myID);
 
     std::map<int,std::vector<int> > connectionsUpdated;
@@ -75,8 +77,40 @@ std::string Twitter::printMapDebug() {
 }
 
 std::set<int> Twitter::BFS(int myID) {
-    std::set<int> toReturn = {1,2,3,4};
-    return toReturn;
+    int temp = myID;
+    std::map<int, bool> visited;
+    for(auto i : connections) {
+        if (i.first == myID) {
+            visited.insert(std::pair<int, bool>(i.first, true));
+        } else {
+            visited.insert(std::pair<int, bool>(i.first, false));
+        }
+    }
+    std::set<int> nodes;
+    std::list<int> queue;
+    queue.push_back(myID);
+    nodes.insert(myID);
+    while(!queue.empty()) {
+        temp = queue.front();
+        nodes.insert(temp);
+        queue.pop_front();
+        for(auto i : connections[temp]) {
+            if (visited.at(i) == false) {
+                visited.at(i) = true;
+                queue.push_back(i);
+            }
+        }
+
+    }
+    for (auto i: visited) {
+        std::cout << i.first << std::endl;
+    }
+    std::cout << "\n";
+    for(auto i: nodes) {
+        std::cout << i << std::endl;
+
+    }
+    return nodes;
 } 
 
 std::string Twitter::printWeights() {
