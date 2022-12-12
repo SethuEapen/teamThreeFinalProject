@@ -83,7 +83,7 @@ TEST_CASE("testing dijkstra 1", "[weight=5]") {
   Twitter twit("../tests/testdata_1.txt");
   std::map<int, int> ans = {{1, 0}, {2, 2}, {3,2}, {4, 3}, {5, 4}};
 
-  map<int, int> p = twit.dijkstra(1, 5);
+  map<int, int> p = twit.dijkstra(1);
   REQUIRE(p == ans);
 }
 
@@ -92,7 +92,7 @@ TEST_CASE("testing dijkstra 2", "[weight=5]") {
   std::map<int, int> ans = {{1, 0}, {2, 4}, {3,3}, {4, 8}, {5, 6}, {7, 4}, 
                             {8,8}, {9,12}, {10, 12}, {11, 15}, {12, 4}, {13, 8}};
   
-  map<int, int> p = twit.dijkstra(1, 13);
+  map<int, int> p = twit.dijkstra(1);
   
   REQUIRE(p == ans);
 }
@@ -101,7 +101,7 @@ TEST_CASE("testing dijkstra 3", "[weight=5]") {
   Twitter twit("../tests/testdata_3.txt");
   std::map<int, int> ans = {{1, 0}, {2, 3}, {3,3}};
   
-  map<int, int> p = twit.dijkstra(1, 4);
+  map<int, int> p = twit.dijkstra(1);
   
   REQUIRE(p == ans);
 }
@@ -110,7 +110,7 @@ TEST_CASE("testing dijkstra 4", "[weight=5]") {
   Twitter twit("../tests/testdata_4.txt");
   std::map<int, int> ans = {{1, 0}, {2, 1}, {3,3}, {4, 2}, {5, 4}};
   
-  map<int, int> p = twit.dijkstra(1, 5);
+  map<int, int> p = twit.dijkstra(1);
   
   REQUIRE(p == ans);
 }
