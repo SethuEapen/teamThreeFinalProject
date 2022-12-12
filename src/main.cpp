@@ -13,14 +13,14 @@ int main() {
     Twitter twitter(path, myID);
     
 
-    std::cout << "*\n*\n*\nAvailable users\n*\n" << std::endl; 
+    std::cout << "*\n*\nAvailable users\n*" << std::endl; 
 
     for (auto i : twitter.connections) {
         std::cout << i.first << " | ";
     }
     std::cout << std::endl;
 
-    std::cout << "*\n*\n*\n*\n" << std::endl; 
+    std::cout << "*\n*\n*" << std::endl; 
 
 
     //twitter.printMap();
@@ -32,8 +32,23 @@ int main() {
         if (command == "exit") {
             running = false;
         } else if (command == "help") {
-            std::cout << "   help - list commands \n   exit - exits program \n   BFS - prints out all the people N elements away from you \n   Dijkstra - finds shortest path between two people" << std::endl;
-        } else if (command == "Dijkstra") {
+            std::cout << "   help - list commands" << std::endl;
+            std::cout << "   users - list available users" << std::endl;
+            std::cout << "   exit - exits program" << std::endl;
+            std::cout << "   dijkstra - finds shortest path between you and another person" << std::endl;
+            std::cout << "   tarjans - prints out the SCC you are in" << std::endl;
+        } else if (command == "users") {
+
+            std::cout << "*\n*\nAvailable users\n*" << std::endl; 
+
+            for (auto i : twitter.connections) {
+                std::cout << i.first << " | ";
+            }
+            std::cout << std::endl;
+
+            std::cout << "*\n*\n*" << std::endl; 
+
+        } else if (command == "dijkstra") {
             
             int end;
             
@@ -41,23 +56,32 @@ int main() {
 
             std::cin >> end;
 
-            std::stack<int> path = twitter.dijkstraHelper(end);
+            if (twitter.connections.find(end) != twitter.connections.end()) {
 
-            std::cout << "   ";
-            
-            while(!path.empty()) {
-                int w = path.top();
-                std::cout << w << " -> ";
-                path.pop();
+                std::stack<int> path = twitter.dijkstraHelper(end);
+
+                std::cout << "   ";
+                
+                while(!path.empty()) {
+                    if (path.size() > 1) {
+                        int w = path.top();
+                        std::cout << w << " -> ";
+                        path.pop(); 
+                    } else {
+                        int w = path.top();
+                        std::cout << w;
+                        path.pop(); 
+                    }
+                }
+
+                std::cout << std::endl;
+            } else {
+                std::cout << "The user that you selected does not exist in the available users" << std::endl;
+                std::cout << "Please refer above or type \"users\" to print out the list of available users" << std::endl;
             }
-
-            std::cout << std::endl;
-
-            // std::cout << "  [";
-            // for (auto i : results) {
-            //     std::cout << " | " << i.first << ", " << i.second;
-            // }
-            // std::cout << "]";
+        } else if (command == "tarjans") {
+            std::cout << "Finding strongly connected component..." << std::endl;
+            twitter.tarjans();
         } else {
             std::cout << "   Not a valid command. Type help for a list of commands" << std::endl;
         }

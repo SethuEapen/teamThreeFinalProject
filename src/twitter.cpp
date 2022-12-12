@@ -55,9 +55,13 @@ Twitter::Twitter(std::string path, int myID) {
             }
         }
     }
-    //std::cout << connections.size() << std::endl;
+    std::cout << "Initial size: " << connections.size() << " users" << std::endl;
     connections = connectionsUpdated;
-    //std::cout << connections.size() << std::endl;
+    if (connections.size() == 1) {
+        std::cout << "   You have selected a user with no followers\n   Program exiting\n   Please try again with different user (default 113058991)" << std::endl;
+        exit(0);
+    }
+    std::cout << "Reduced size: " << connections.size() << " users" << std::endl;
     dijkstra(myID);
 }
 
@@ -179,4 +183,62 @@ int Twitter::minDist(std::map<int, int> distance, std::set<int> seen) {
         }
     }
     return ind;
+}
+
+void Twitter::tarjans() {
+    std::stack<int>* st = new std::stack<int>();
+    for (auto i : connections) {
+        disc[i.first] = -1;
+        low[i.first] = -1;
+        stackMember[i.first] = false;
+    }
+    tarjansHelper(ID, st);
+
+    for (auto i : sccs) {
+        if (std::find(i.begin(), i.end(), ID) != i.end()) {
+            for (auto j : i) {
+                std::cout << j << " ";
+            }
+            std::cout << std::endl;
+            std::cout << "Size of strongly connected componenet: " << i.size() << std::endl;
+            if (i.size() == 1) {
+                std::cout << "Unfortunate you have no freinds :(" << std::endl;
+            }
+        }
+    }
+
+}
+
+void Twitter::tarjansHelper(int u, std::stack<int>* st) {
+    static int time = 0;
+    disc[u] = low[u] = ++time;
+    st->push(u);
+    stackMember[u] = true;
+    for(auto i : connections[u]) {
+        int v = i; 
+        if (disc[v] == -1) {
+            tarjansHelper(v, st);
+            low[u] = std::min(low[u], low[v]);
+        }
+        else if (stackMember[v] == true) {
+            low[u] = std::min(low[u], disc[v]);
+        }
+    }
+    int w = 0;
+    if (low[u] == disc[u]) {
+        std::vector<int> output;
+        while (st->top() != u) {
+            w = (int)st->top();
+            //std::cout << w << " ";
+            output.push_back(w);
+            stackMember[w] = false;
+            st->pop();
+        }
+        w = (int)st->top();
+        //std::cout << w << std::endl;
+        output.push_back(w);
+        stackMember[w] = false;
+        st->pop();
+        sccs.push_back(output);
+    }
 }
