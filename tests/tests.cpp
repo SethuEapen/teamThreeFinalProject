@@ -82,11 +82,7 @@ TEST_CASE("testing weighting 4", "[weight=5]") {
 TEST_CASE("testing dijkstra 1", "[weight=5]") {
   Twitter twit("../tests/testdata_1.txt");
   std::map<int, int> ans = {{1, 0}, {2, 2}, {3,2}, {4, 3}, {5, 4}};
-  // std::cout << "  [";
-  // for (auto i : ans) {
-  //     std::cout << " | " << i.first << ", " << i.second;
-  // }
-  // std::cout << "]";
+
   map<int, int> p = twit.dijkstra(1, 5);
   REQUIRE(p == ans);
 }
