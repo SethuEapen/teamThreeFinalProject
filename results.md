@@ -36,6 +36,8 @@ Tarjan’s
 Tarjan’s algorithm was surprisingly easy to implement. We ran it on a small scale using the same mini-dataset which contains the edge cases we need(see below), and then on the full scale one. This is the only algorithm we implemented after our BFS trimming, so testing it on the full dataset actually presented some readable results. An interesting discovery we made at this point was that a large percentage of the people within that BFS run will form the strongly connected component, but hardly anyone who isn't in that SCC will have any other followers. This led to us implementing a response in the UI for if the user inputs an ID with no followers, as that will never be part of a strongly connected component. 
 
 Testing Dataset
- 
+<img width="68" alt="Screen Shot 2022-12-12 at 3 37 32 PM" src="https://user-images.githubusercontent.com/98365406/207159915-a30946a8-02bb-4dff-a6e1-71f58105876c.png">
+<img width="436" alt="Screen Shot 2022-12-12 at 3 37 52 PM" src="https://user-images.githubusercontent.com/98365406/207159980-059dbf63-839b-4bb8-a0c5-e140990fdde4.png">
+
 The first image here is the list of connections that we have which correlates to the graph on the right. As you can see, node 1(a) is inaccessible from anyone else, but is connected to b and c. These two form their own SCC, as do D and E, but there are no back edges between those two groups. This gave us a fairly comprehensive set of cases to test against while also maintaining a compact and readable size for testing. Of course there were some errors when scaling up to the larger dataset so we tested against that as well, but most of the conceptual issues were weeded out at this size.
 
