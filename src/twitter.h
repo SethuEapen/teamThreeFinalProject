@@ -6,7 +6,7 @@
 #include <map>
 #include <queue>
 #include <set>
-#include <bits/stdc++.h>
+// #include <bits/stdc++.h>
 
 
 class Twitter
@@ -18,5 +18,6 @@ class Twitter
         std::map<int, int> weights;
         std::map<int, int> dijkstra(int start, int end);
         int minDist(std::map<int, int> distance, std::set<int> seen);
+        std::string printMapDebug();
 
 };

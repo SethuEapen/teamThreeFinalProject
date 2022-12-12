@@ -9,7 +9,7 @@ int main() {
     bool running = true;
     std::string path = "../data/twitter_combined.txt";
     Twitter twitter(path);
-    //twitter.printMap();
+    twitter.printMapDebug();
     std::string command;
     while (running) {
         std::cout << "Please enter a command (help): ";

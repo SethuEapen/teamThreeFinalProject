@@ -41,6 +41,25 @@ void Twitter::printMap() {
     }
 }
 
+std::string Twitter::printMapDebug() {
+    std::string output = "";
+    output += "{";
+    for (auto const& [key, val] : connections) {
+        output += "{";
+        output += std::to_string(key);
+        output += ", {";
+        for(int i : val) {
+            output += std::to_string(i);
+            output += ", ";
+        } 
+        output += "}, ";
+    }
+    output += "}";
+    return output;
+}
+
+
+
 std::map<int, int> Twitter::dijkstra(int start, int end) {
     std::map<int, int> dist; //distances from start
     //std::map<int, std::vector<int>> paths;
