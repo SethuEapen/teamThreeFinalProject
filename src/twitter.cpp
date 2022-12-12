@@ -1,7 +1,8 @@
 #include "twitter.h"
 #include <fstream>
 
-Twitter::Twitter(std::string path) {
+Twitter::Twitter(std::string path, int myID) {
+    //Read in the file
     std::ifstream infile(path);
     int start, end;
     int maxWeight = 0;
@@ -17,18 +18,33 @@ Twitter::Twitter(std::string path) {
             maxWeight = weights[end];
         }
     }
+    //init weights to 0
     for (auto const i : connections) {
         if (weights.find(i.first) == weights.end()) {
             weights[i.first] = 0;
         }
     }
+    //transform the weights to correct
     for (auto const i : weights) {
         weights[i.first] = maxWeight - i.second + 1;
     }
-    for (auto i : weights) {
-        std::cout << " | " << i.first << ", " << i.second;
+    
+    //get rid of extranious data
+    std::set<int> keep = BFS(myID);
+
+    std::map<int,std::vector<int> > connectionsUpdated;
+    
+    for (auto i : connections) {
+        if (keep.find(i.first) != keep.end()) {
+            connectionsUpdated[i.first].resize(0);
+            for (auto j : i.second) {
+                if (keep.find(j) != keep.end()) {
+                    connectionsUpdated[i.first].push_back(j);
+                }
+            }
+        }
     }
-    std::cout << std::endl;
+    connections = connectionsUpdated;
 }
 
 void Twitter::printMap() {
@@ -39,6 +55,38 @@ void Twitter::printMap() {
         } 
         std::cout << std::endl;
     }
+}
+
+std::string Twitter::printMapDebug() {
+    std::string output = "";
+    output += "{";
+    for (auto const& [key, val] : connections) {
+        output += "{";
+        output += std::to_string(key);
+        output += ", {";
+        for(int i : val) {
+            output += std::to_string(i);
+            output += ", ";
+        } 
+        output += "}, ";
+    }
+    output += "}";
+    return output;
+}
+
+std::set<int> Twitter::BFS(int myID) {
+    std::set<int> toReturn = {1,2,3,4};
+    return toReturn;
+} 
+
+std::string Twitter::printWeights() {
+    std::string output;
+    output += "{";
+    for (auto i : weights) {
+        //output += "{" + i.first + ", " + i.second + "}";
+    }
+    output += "}";
+    return output;
 }
 
 std::map<int, int> Twitter::dijkstra(int start, int end) {
