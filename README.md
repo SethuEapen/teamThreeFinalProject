@@ -15,7 +15,7 @@ The tests folder has our test files that we created to run our code.
 ***
 **Running Instructions**
 1) clone the repository onto your local machine
-2) open the project in your IDE of choice
+2) open the project in your IDE of choice (Running in the 225 environment is preferred as that will guarantee access to CMake)
 3) you need to use CMake to build your own makefile. To do this, first enter the proper directory, then run the following in the terminal of the IDE you chose:  
     -- `mkdir build`  
     -- `cd build`  
