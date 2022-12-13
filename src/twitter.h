@@ -15,6 +15,7 @@
 class Twitter
 {
     public:
+        //fucntions
         Twitter(std::string path, int myID);
         void printMap();
         std::string printMapDebug();
