@@ -25,3 +25,8 @@ The tests folder has our test files that we created to run our code.
 5) every time you need to recompile and test the code, you will need to run:  
     -- `make`  
     -- `./test`
+6) to run the main file, run (after ensuring you're still in the build directory):  
+    -- `./main`
+7) every time you need to recompile and run the main file, you will need to run:  
+    -- `make`  
+    -- `./main`
