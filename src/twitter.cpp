@@ -23,13 +23,13 @@ Twitter::Twitter(std::string path, int myID) {
         }
     }
     //init weights to 0
-    for (auto const i : connections) {
+    for (auto i : connections) {
         if (weights.find(i.first) == weights.end()) {
             weights[i.first] = 0;
         }
     }
     //transform the weights to correct
-    for (auto const i : weights) {
+    for (auto i : weights) {
         weights[i.first] = maxWeight - i.second + 1;
     }
 
@@ -40,23 +40,26 @@ Twitter::Twitter(std::string path, int myID) {
         exit(0);
     }
 
+    std::cout << "Initial size: " << connections.size() << " users" << std::endl;
 
-    std::set<int> keep = BFS(myID);
+    if (connections.size() > 10000) {
 
-    std::map<int,std::vector<int> > connectionsUpdated;
-    
-    for (auto i : connections) {
-        if (keep.find(i.first) != keep.end()) {
-            connectionsUpdated[i.first].resize(0);
-            for (auto j : i.second) {
-                if (keep.find(j) != keep.end()) {
-                    connectionsUpdated[i.first].push_back(j);
+        std::set<int> keep = BFS(myID);
+
+        std::map<int,std::vector<int> > connectionsUpdated;
+        
+        for (auto i : connections) {
+            if (keep.find(i.first) != keep.end()) {
+                connectionsUpdated[i.first].resize(0);
+                for (auto j : i.second) {
+                    if (keep.find(j) != keep.end()) {
+                        connectionsUpdated[i.first].push_back(j);
+                    }
                 }
             }
         }
+        connections = connectionsUpdated;
     }
-    std::cout << "Initial size: " << connections.size() << " users" << std::endl;
-    connections = connectionsUpdated;
     if (connections.size() == 1) {
         std::cout << "   You have selected a user with no followers\n   Program exiting\n   Please try again with different user (default 113058991)" << std::endl;
         exit(0);

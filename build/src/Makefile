@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/cs225/teamThreeFinalProject/build/CMakeFiles /workspaces/cs225/teamThreeFinalProject/build//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
+	cd /workspaces/cs225/teamThreeFinalProject/build && $(CMAKE_COMMAND) -E cmake_progress_start /workspaces/cs225/teamThreeFinalProject/build/CMakeFiles /workspaces/cs225/teamThreeFinalProject/build/src//CMakeFiles/progress.marks
+	cd /workspaces/cs225/teamThreeFinalProject/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/cs225/teamThreeFinalProject/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
+	cd /workspaces/cs225/teamThreeFinalProject/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,106 +103,57 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /workspaces/cs225/teamThreeFinalProject/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /workspaces/cs225/teamThreeFinalProject/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -P /workspaces/cs225/teamThreeFinalProject/build/CMakeFiles/VerifyGlobs.cmake
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /workspaces/cs225/teamThreeFinalProject/build && $(CMAKE_COMMAND) -P /workspaces/cs225/teamThreeFinalProject/build/CMakeFiles/VerifyGlobs.cmake
+	cd /workspaces/cs225/teamThreeFinalProject/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named test
+# Convenience name for target.
+src/CMakeFiles/src.dir/rule:
+	cd /workspaces/cs225/teamThreeFinalProject/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/src.dir/rule
+.PHONY : src/CMakeFiles/src.dir/rule
 
-# Build rule for target.
-test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test
-.PHONY : test
-
-# fast build rule for target.
-test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
-.PHONY : test/fast
-
-#=============================================================================
-# Target rules for targets named main
-
-# Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
-.PHONY : main
-
-# fast build rule for target.
-main/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-.PHONY : main/fast
-
-#=============================================================================
-# Target rules for targets named src
-
-# Build rule for target.
-src: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src
+# Convenience name for target.
+src: src/CMakeFiles/src.dir/rule
 .PHONY : src
 
 # fast build rule for target.
 src/fast:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/build
+	cd /workspaces/cs225/teamThreeFinalProject/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/build
 .PHONY : src/fast
 
-entry/main.o: entry/main.cpp.o
-.PHONY : entry/main.o
+twitter.o: twitter.cpp.o
+.PHONY : twitter.o
 
 # target to build an object file
-entry/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/entry/main.cpp.o
-.PHONY : entry/main.cpp.o
+twitter.cpp.o:
+	cd /workspaces/cs225/teamThreeFinalProject/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/twitter.cpp.o
+.PHONY : twitter.cpp.o
 
-entry/main.i: entry/main.cpp.i
-.PHONY : entry/main.i
-
-# target to preprocess a source file
-entry/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/entry/main.cpp.i
-.PHONY : entry/main.cpp.i
-
-entry/main.s: entry/main.cpp.s
-.PHONY : entry/main.s
-
-# target to generate assembly for a file
-entry/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/entry/main.cpp.s
-.PHONY : entry/main.cpp.s
-
-tests/tests.o: tests/tests.cpp.o
-.PHONY : tests/tests.o
-
-# target to build an object file
-tests/tests.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/tests.cpp.o
-.PHONY : tests/tests.cpp.o
-
-tests/tests.i: tests/tests.cpp.i
-.PHONY : tests/tests.i
+twitter.i: twitter.cpp.i
+.PHONY : twitter.i
 
 # target to preprocess a source file
-tests/tests.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/tests.cpp.i
-.PHONY : tests/tests.cpp.i
+twitter.cpp.i:
+	cd /workspaces/cs225/teamThreeFinalProject/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/twitter.cpp.i
+.PHONY : twitter.cpp.i
 
-tests/tests.s: tests/tests.cpp.s
-.PHONY : tests/tests.s
+twitter.s: twitter.cpp.s
+.PHONY : twitter.s
 
 # target to generate assembly for a file
-tests/tests.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/tests.cpp.s
-.PHONY : tests/tests.cpp.s
+twitter.cpp.s:
+	cd /workspaces/cs225/teamThreeFinalProject/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/twitter.cpp.s
+.PHONY : twitter.cpp.s
 
 # Help Target
 help:
@@ -212,15 +163,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... main"
 	@echo "... src"
-	@echo "... test"
-	@echo "... entry/main.o"
-	@echo "... entry/main.i"
-	@echo "... entry/main.s"
-	@echo "... tests/tests.o"
-	@echo "... tests/tests.i"
-	@echo "... tests/tests.s"
+	@echo "... twitter.o"
+	@echo "... twitter.i"
+	@echo "... twitter.s"
 .PHONY : help
 
 
@@ -232,7 +178,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -P /workspaces/cs225/teamThreeFinalProject/build/CMakeFiles/VerifyGlobs.cmake
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /workspaces/cs225/teamThreeFinalProject/build && $(CMAKE_COMMAND) -P /workspaces/cs225/teamThreeFinalProject/build/CMakeFiles/VerifyGlobs.cmake
+	cd /workspaces/cs225/teamThreeFinalProject/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
