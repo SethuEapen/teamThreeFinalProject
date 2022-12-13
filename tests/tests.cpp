@@ -121,3 +121,37 @@ TEST_CASE("testing dijkstra 4", "[weight=5]") {
   REQUIRE(dans == twit.dist);
   REQUIRE(pans == twit.prev);
 }
+
+TEST_CASE("testing tarjans 1", "[weight=5]") {
+  Twitter twit("../tests/testdata_1.txt", 1);
+  twit.tarjans();
+  std::vector<std::vector<int>> tans = {{1}};
+  bool temp = false;
+  for (auto i : twit.sccs) {
+        if (std::find(i.begin(), i.end(), 1) != i.end()) {
+            temp = true;
+        }
+    }
+  
+  REQUIRE(temp);
+}
+
+TEST_CASE("testing tarjans 2", "[weight=5]") {
+  Twitter twit("../tests/testdata_1.txt", 2);
+  twit.tarjans();
+  std::vector<std::vector<int>> tans = {{3, 2}};
+  bool temp = false;
+  for (auto i : twit.sccs) {
+        if (std::find(i.begin(), i.end(), 2) != i.end()) {
+            temp = true;
+        }
+    }
+  
+  REQUIRE(temp);
+}
+
+TEST_CASE("testing tarjans 3", "[weight=5]") {
+  Twitter twit("../tests/testdata_2.txt", 1);
+  twit.tarjans();
+  REQUIRE(twit.sccs.size() == 13);
+}

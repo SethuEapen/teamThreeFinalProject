@@ -8,6 +8,7 @@ Twitter::Twitter(std::string path, int myID) {
     int start, end;
     int maxWeight = 0;
 
+    std::cout << "*\ncaluclating edge weights..." << std::endl;
     while (infile >> start >> end) {
         connections[start].push_back(end);
         if (connections.find(end) == connections.end()) {
@@ -40,6 +41,8 @@ Twitter::Twitter(std::string path, int myID) {
         exit(0);
     }
 
+    std::cout << "*\nRunning BFS... \n*" << std::endl;
+
     std::cout << "Initial size: " << connections.size() << " users" << std::endl;
 
     if (connections.size() > 10000) {
@@ -65,13 +68,14 @@ Twitter::Twitter(std::string path, int myID) {
         exit(0);
     }
     std::cout << "Reduced size: " << connections.size() << " users" << std::endl;
+    std::cout << "*\nRunning Dijkstra's" << std::endl;
     dijkstra(myID);
 }
 
 void Twitter::printMap() {
-    for (auto const& [key, val] : connections) {
-        std::cout << key << " | ";
-        for(int i : val) {
+    for (auto const& key : connections) {
+        std::cout << key.first << " | ";
+        for(int i : key.second) {
             std::cout << i << ", ";
         } 
         std::cout << std::endl;
@@ -81,11 +85,11 @@ void Twitter::printMap() {
 std::string Twitter::printMapDebug() {
     std::string output = "";
     output += "{";
-    for (auto const& [key, val] : connections) {
+    for (auto const& key : connections) {
         output += "{";
-        output += std::to_string(key);
+        output += std::to_string(key.first);
         output += ", {";
-        for(int i : val) {
+        for(int i : key.second) {
             output += std::to_string(i);
             output += ", ";
         } 

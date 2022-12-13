@@ -3,21 +3,21 @@
 cmake_policy(SET CMP0009 NEW)
 
 # src_sources at src/CMakeLists.txt:5 (file)
-file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/workspaces/cs225/teamThreeFinalProject/src/*.cpp")
+file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/workspaces/CS225/teamThreeFinalProject/src/*.cpp")
 set(OLD_GLOB
-  "/workspaces/cs225/teamThreeFinalProject/src/twitter.cpp"
+  "/workspaces/CS225/teamThreeFinalProject/src/twitter.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/workspaces/cs225/teamThreeFinalProject/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "/workspaces/CS225/teamThreeFinalProject/build/CMakeFiles/cmake.verify_globs")
 endif()
 
 # tests_src at CMakeLists.txt:131 (file)
-file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/workspaces/cs225/teamThreeFinalProject/tests/*.cpp")
+file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/workspaces/CS225/teamThreeFinalProject/tests/*.cpp")
 set(OLD_GLOB
-  "/workspaces/cs225/teamThreeFinalProject/tests/tests.cpp"
+  "/workspaces/CS225/teamThreeFinalProject/tests/tests.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/workspaces/cs225/teamThreeFinalProject/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "/workspaces/CS225/teamThreeFinalProject/build/CMakeFiles/cmake.verify_globs")
 endif()
