@@ -30,3 +30,4 @@ The tests folder has our test files that we created to run our code.
 7) every time you need to recompile and run the main file, you will need to run:  
     -- `make`  
     -- `./main`
+    if you would like to change the dataset being used, go to entry/main.cpp and change the string path to whichever dataset you would like to use(extra datasets in tests directory)
