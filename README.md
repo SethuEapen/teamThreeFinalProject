@@ -6,9 +6,11 @@
 **Github Organization**  
 The build folder has our Makefile and all of the build files that we used to run CMake in order to compile and test our code.  
 
-The data folder has sample datasets that we created to test our code. We made these since the dataset we originally use has thousands of values, so it was easier for us to use smaller sets to run our code.  
+The data folder has sample datasets that we created to test our code. We made these since the dataset we originally use has thousands of values, so it was easier for us to use smaller sets to run our code.
 
-The src folder has all of our code files, including the main file. Twitter.cpp is the only file we needed to create for this project. We wrote all of our traversals/algorithms into it (BFS, Tarjan's, Dijkstra's), as well as the constructor and helper functions that we needed to implement the algorithms and run/test our code.  
+The entry folder has our main file. We needed to build this extra directory in order to be able to create the main executable to compile and run the main file.
+
+The src folder has all of our code files, excluding the main file. Twitter.cpp is the only file we needed to create for this project. We wrote all of our traversals/algorithms into it (BFS, Tarjan's, Dijkstra's), as well as the constructor and helper functions that we needed to implement the algorithms and run/test our code.
 
 The tests folder has our test files that we created to run our code.
 
